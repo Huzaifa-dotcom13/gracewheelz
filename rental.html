@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Rent Toyota Corolla, Honda Civic, Hilux and more with GraceWheels Islamabad." />
+    <title>Car Rental | GraceWheels</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Syne:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div class="page-loader" id="pageLoader" aria-hidden="true">
+      <div class="loader-inner">
+        <div class="loader-ring" role="presentation"></div>
+        <p class="loader-text">GraceWheels</p>
+      </div>
+    </div>
+
+    <header class="site-header" id="siteHeader">
+      <nav class="nav-inner" aria-label="Main navigation">
+        <a href="index.html" class="logo">Grace<span>Wheels</span></a>
+        <button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="rental.html" class="active">Rent a Car</a></li>
+          <li><a href="selling.html">Buy a Car</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="page-hero">
+        <div class="container">
+          <p class="section-label reveal">Fleet access</p>
+          <h1 class="section-title reveal">Rent the right car, right now</h1>
+          <p class="section-desc reveal">
+            Filter by type, budget, transmission, and fuel. Book with confidence — we confirm every request personally from Islamabad.
+          </p>
+        </div>
+      </section>
+
+      <section class="section" style="padding-top: 0">
+        <div class="container">
+          <div class="filters-panel reveal">
+            <div class="filters-grid">
+              <div class="filter-group">
+                <label>Car type</label>
+                <div class="checkbox-group" id="filterType">
+                  <label class="checkbox-row"><input type="checkbox" value="sedan" checked /> Sedan</label>
+                  <label class="checkbox-row"><input type="checkbox" value="suv" checked /> SUV</label>
+                  <label class="checkbox-row"><input type="checkbox" value="pickup" checked /> Pickup</label>
+                  <label class="checkbox-row"><input type="checkbox" value="hatch" checked /> Hatchback</label>
+                </div>
+              </div>
+              <div class="filter-group">
+                <label for="priceRange">Price range (per day)</label>
+                <select id="priceRange" aria-label="Price range filter">
+                  <option value="any">Any</option>
+                  <option value="0-8000">Under PKR 8,000</option>
+                  <option value="8000-12000">PKR 8,000 – 12,000</option>
+                  <option value="12000-999999">Above PKR 12,000</option>
+                </select>
+              </div>
+              <div class="filter-group">
+                <label for="transmission">Transmission</label>
+                <select id="transmission" aria-label="Transmission filter">
+                  <option value="any">Any</option>
+                  <option value="auto">Automatic</option>
+                  <option value="manual">Manual</option>
+                </select>
+              </div>
+              <div class="filter-group">
+                <label for="fuelType">Fuel type</label>
+                <select id="fuelType" aria-label="Fuel type filter">
+                  <option value="any">Any</option>
+                  <option value="petrol">Petrol</option>
+                  <option value="diesel">Diesel</option>
+                </select>
+              </div>
+            </div>
+            <div class="filter-actions">
+              <button type="button" class="btn btn-outline btn-sm" id="resetFilters">Reset filters</button>
+              <span class="result-count" id="rentalCount"><strong>0</strong> vehicles match</span>
+            </div>
+          </div>
+
+          <div class="cards-grid" id="rentalGrid">
+            <article
+              class="car-card rental-card"
+              data-type="sedan"
+              data-day="8500"
+              data-trans="auto"
+              data-fuel="petrol"
+            >
+              <div class="car-card-image">
+                <img src="assets/corrolla.webp" alt="Toyota Corolla" loading="lazy" />
+                <span class="car-card-badge">Popular</span>
+              </div>
+              <div class="car-card-body">
+                <h3 class="car-card-title">Toyota Corolla</h3>
+                <p class="car-card-meta">Sedan · Auto · Petrol</p>
+                <div class="price-row">
+                  <div class="price-pill"><small>Day</small><strong>PKR 8,500</strong></div>
+                  <div class="price-pill"><small>Week</small><strong>PKR 52,000</strong></div>
+                  <div class="price-pill"><small>Month</small><strong>PKR 185,000</strong></div>
+                </div>
+                <div class="car-features">
+                  <span><i class="fa-solid fa-check"></i> Full insurance option</span>
+                  <span><i class="fa-solid fa-location-dot"></i> Islamabad pickup</span>
+                </div>
+              </div>
+            </article>
+
+            <article
+              class="car-card rental-card"
+              data-type="sedan"
+              data-day="10500"
+              data-trans="auto"
+              data-fuel="petrol"
+            >
+              <div class="car-card-image">
+                <img src="assets/civic.webp" alt="Honda Civic" loading="lazy" />
+                <span class="car-card-badge">RS feel</span>
+              </div>
+              <div class="car-card-body">
+                <h3 class="car-card-title">Honda Civic</h3>
+                <p class="car-card-meta">Sedan · Auto · Petrol</p>
+                <div class="price-row">
+                  <div class="price-pill"><small>Day</small><strong>PKR 10,500</strong></div>
+                  <div class="price-pill"><small>Week</small><strong>PKR 62,000</strong></div>
+                  <div class="price-pill"><small>Month</small><strong>PKR 215,000</strong></div>
+                </div>
+                <div class="car-features">
+                  <span><i class="fa-solid fa-star"></i> Premium trim</span>
+                  <span><i class="fa-solid fa-road"></i> Motorway ready</span>
+                </div>
+              </div>
+            </article>
+
+            <article
+              class="car-card rental-card"
+              data-type="pickup"
+              data-day="14000"
+              data-trans="manual"
+              data-fuel="diesel"
+            >
+              <div class="car-card-image">
+                <img src="assets/hilux.webp" alt="Toyota Hilux class pickup" loading="lazy" />
+                <span class="car-card-badge">Workhorse</span>
+              </div>
+              <div class="car-card-body">
+                <h3 class="car-card-title">Toyota Hilux</h3>
+                <p class="car-card-meta">Pickup · Manual · Diesel</p>
+                <div class="price-row">
+                  <div class="price-pill"><small>Day</small><strong>PKR 14,000</strong></div>
+                  <div class="price-pill"><small>Week</small><strong>PKR 82,000</strong></div>
+                  <div class="price-pill"><small>Month</small><strong>PKR 295,000</strong></div>
+                </div>
+                <div class="car-features">
+                  <span><i class="fa-solid fa-truck-pickup"></i> 4×4 option</span>
+                  <span><i class="fa-solid fa-toolbox"></i> Cargo ready</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="car-card rental-card" data-type="hatch" data-day="6200" data-trans="manual" data-fuel="petrol">
+              <div class="car-card-image">
+                <img src="assets/swift.webp" alt="Suzuki Swift" loading="lazy" />
+                <span class="car-card-badge">Budget</span>
+              </div>
+              <div class="car-card-body">
+                <h3 class="car-card-title">Suzuki Swift</h3>
+                <p class="car-card-meta">Hatch · Manual · Petrol</p>
+                <div class="price-row">
+                  <div class="price-pill"><small>Day</small><strong>PKR 6,200</strong></div>
+                  <div class="price-pill"><small>Week</small><strong>PKR 38,000</strong></div>
+                  <div class="price-pill"><small>Month</small><strong>PKR 132,000</strong></div>
+                </div>
+                <div class="car-features">
+                  <span><i class="fa-solid fa-city"></i> Urban agile</span>
+                  <span><i class="fa-solid fa-piggy-bank"></i> Efficient</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="car-card rental-card" data-type="suv" data-day="22000" data-trans="auto" data-fuel="diesel">
+              <div class="car-card-image">
+                <img src="assets/fortuner.webp" alt="Toyota Fortuner" loading="lazy" />
+                <span class="car-card-badge">Executive</span>
+              </div>
+              <div class="car-card-body">
+                <h3 class="car-card-title">Toyota Fortuner</h3>
+                <p class="car-card-meta">SUV · Auto · Diesel</p>
+                <div class="price-row">
+                  <div class="price-pill"><small>Day</small><strong>PKR 22,000</strong></div>
+                  <div class="price-pill"><small>Week</small><strong>PKR 128,000</strong></div>
+                  <div class="price-pill"><small>Month</small><strong>PKR 455,000</strong></div>
+                </div>
+                <div class="car-features">
+                  <span><i class="fa-solid fa-users"></i> 7 seats</span>
+                  <span><i class="fa-solid fa-mountain"></i> Terrain modes</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="car-card rental-card" data-type="sedan" data-day="7800" data-trans="auto" data-fuel="petrol">
+              <div class="car-card-image">
+                <img src="assets/city.webp" alt="Honda City" loading="lazy" />
+                <span class="car-card-badge">Daily driver</span>
+              </div>
+              <div class="car-card-body">
+                <h3 class="car-card-title">Honda City</h3>
+                <p class="car-card-meta">Sedan · Auto · Petrol</p>
+                <div class="price-row">
+                  <div class="price-pill"><small>Day</small><strong>PKR 7,800</strong></div>
+                  <div class="price-pill"><small>Week</small><strong>PKR 48,000</strong></div>
+                  <div class="price-pill"><small>Month</small><strong>PKR 168,000</strong></div>
+                </div>
+                <div class="car-features">
+                  <span><i class="fa-solid fa-gauge-simple-high"></i> Smooth CVT</span>
+                  <span><i class="fa-solid fa-leaf"></i> Economy</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="car-card rental-card" data-type="hatch" data-day="5500" data-trans="manual" data-fuel="petrol">
+              <div class="car-card-image">
+                <img src="assets/alto.webp" alt="Suzuki Alto compact" loading="lazy" />
+                <span class="car-card-badge">City zip</span>
+              </div>
+              <div class="car-card-body">
+                <h3 class="car-card-title">Suzuki Alto</h3>
+                <p class="car-card-meta">Hatch · Manual · Petrol</p>
+                <div class="price-row">
+                  <div class="price-pill"><small>Day</small><strong>PKR 5,500</strong></div>
+                  <div class="price-pill"><small>Week</small><strong>PKR 33,000</strong></div>
+                  <div class="price-pill"><small>Month</small><strong>PKR 115,000</strong></div>
+                </div>
+                <div class="car-features">
+                  <span><i class="fa-solid fa-coins"></i> Lowest tier</span>
+                  <span><i class="fa-solid fa-parking"></i> Tiny footprint</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="car-card rental-card" data-type="suv" data-day="16500" data-trans="auto" data-fuel="petrol">
+              <div class="car-card-image">
+                <img src="assets/sportage.webp" alt="SUV crossover style Kia Sportage" loading="lazy" />
+                <span class="car-card-badge">Crossover</span>
+              </div>
+              <div class="car-card-body">
+                <h3 class="car-card-title">Kia Sportage</h3>
+                <p class="car-card-meta">SUV · Auto · Petrol</p>
+                <div class="price-row">
+                  <div class="price-pill"><small>Day</small><strong>PKR 16,500</strong></div>
+                  <div class="price-pill"><small>Week</small><strong>PKR 96,000</strong></div>
+                  <div class="price-pill"><small>Month</small><strong>PKR 340,000</strong></div>
+                </div>
+                <div class="car-features">
+                  <span><i class="fa-solid fa-display"></i> Tech cabin</span>
+                  <span><i class="fa-solid fa-shield"></i> ADAS pack</span>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="form-panel reveal" id="booking">
+            <h3 class="mt-0">Booking request</h3>
+            <p>
+              Submit your rental details. We deliver confirmations to <strong>huzaifaamjad111222@gmail.com</strong> and reply with availability shortly.
+            </p>
+
+            <div class="form-status success" id="bookingSuccess" role="status" aria-live="polite" hidden></div>
+            <div class="form-status error" id="bookingError" role="alert" aria-live="assertive" hidden></div>
+
+            <form class="booking-form" id="bookingForm" novalidate>
+              <div class="form-field">
+                <label for="bkName">Full name</label>
+                <input type="text" id="bkName" name="name" required autocomplete="name" placeholder="Your name" />
+                <span class="field-error">Please enter your name.</span>
+              </div>
+              <div class="form-field">
+                <label for="bkPhone">Phone number</label>
+                <input type="tel" id="bkPhone" name="phone" required autocomplete="tel" placeholder="+92 300 1234567" />
+                <span class="field-error">Enter a valid phone number.</span>
+              </div>
+              <div class="form-field">
+                <label for="bkEmail">Email</label>
+                <input type="email" id="bkEmail" name="email" required autocomplete="email" placeholder="you@email.com" />
+                <span class="field-error">Enter a valid email.</span>
+              </div>
+              <div class="form-field">
+                <label for="bkCar">Car selection</label>
+                <select id="bkCar" name="car" required>
+                  <option value="">Choose a vehicle</option>
+                  <option>Toyota Corolla</option>
+                  <option>Honda Civic</option>
+                  <option>Toyota Hilux</option>
+                  <option>Suzuki Swift</option>
+                  <option>Toyota Fortuner</option>
+                  <option>Honda City</option>
+                  <option>Suzuki Alto</option>
+                  <option>Kia Sportage</option>
+                </select>
+                <span class="field-error">Select a car.</span>
+              </div>
+              <div class="form-field">
+                <label for="bkDuration">Rental duration</label>
+                <select id="bkDuration" name="duration_type" required>
+                  <option value="">Select unit</option>
+                  <option value="Day">Per day</option>
+                  <option value="Week">Per week</option>
+                  <option value="Month">Per month</option>
+                </select>
+                <span class="field-error">Choose duration type.</span>
+              </div>
+              <div class="form-field">
+                <label for="bkPickup">Pickup date</label>
+                <input type="date" id="bkPickup" name="pickup_date" required />
+                <span class="field-error">Pick a pickup date.</span>
+              </div>
+              <div class="form-field">
+                <label for="bkReturn">Return date</label>
+                <input type="date" id="bkReturn" name="return_date" required />
+                <span class="field-error">Return must be after pickup.</span>
+              </div>
+              <input type="hidden" name="_subject" value="GraceWheels — New rental booking" />
+              <input type="hidden" name="_template" value="table" />
+              <input type="hidden" name="_captcha" value="false" />
+              <div class="form-submit-wrap">
+                <button type="submit" class="btn btn-primary" id="bookingSubmit">
+                  <i class="fa-solid fa-paper-plane"></i> Submit booking
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-col">
+          <div class="footer-brand">Grace<span>Wheels</span></div>
+          <p>Premium car rental and sales. Islamabad, Pakistan.</p>
+          <div class="social-row">
+            <a href="https://facebook.com" aria-label="Facebook" target="_blank" rel="noopener noreferrer"
+              ><i class="fa-brands fa-facebook-f"></i
+            ></a>
+            <a href="https://instagram.com" aria-label="Instagram" target="_blank" rel="noopener noreferrer"
+              ><i class="fa-brands fa-instagram"></i
+            ></a>
+            <a href="https://twitter.com" aria-label="X" target="_blank" rel="noopener noreferrer"
+              ><i class="fa-brands fa-x-twitter"></i
+            ></a>
+            <a href="https://wa.me/923001234567" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer"
+              ><i class="fa-brands fa-whatsapp"></i
+            ></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="rental.html">Car Rental</a></li>
+            <li><a href="selling.html">Buy a Car</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul class="footer-links">
+            <li><i class="fa-solid fa-phone" style="color: var(--accent); margin-right: 0.35rem"></i> +92 300 1234567</li>
+            <li>
+              <i class="fa-solid fa-envelope" style="color: var(--accent); margin-right: 0.35rem"></i>
+              <a href="mailto:huzaifaamjad111222@gmail.com">huzaifaamjad111222@gmail.com</a>
+            </li>
+            <li><i class="fa-solid fa-location-dot" style="color: var(--accent); margin-right: 0.35rem"></i> Islamabad, Pakistan</li>
+          </ul>
+        </div>
+      </div>
+      <p class="footer-bottom">&copy; <span id="year"></span> GraceWheels. Drive Your Dream.</p>
+    </footer>
+
+    <button type="button" class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+      <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <script src="js/main.js"></script>
+    <script src="js/rental.js"></script>
+  </body>
+</html>
